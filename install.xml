@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module type="plugin" name="payrexx">
+    <title>Payrexx</title>
+    <summary>Payrexx payment gateway integration. Allows to accept payments using Payrexx.</summary>
+    <author>Intelliants LLC</author>
+    <contributor>Intelliants LLC</contributor>
+    <version>1.0.0</version>
+    <date>2020-04-30</date>
+    <category>payments</category>
+    <compatibility>4.1</compatibility>
+
+    <config group="financial" name="payrexx" type="divider">Payrexx</config>
+    <config group="financial" name="payrexx_currency" type="text" description="Currency">CHF</config>
+    <config group="financial" name="payrexx_username" type="text" description="Username"><![CDATA[]]></config>
+    <config group="financial" name="payrexx_template_id" type="text" description="Template ID"><![CDATA[]]></config>
+    <config group="financial" name="payrexx_api_secret" type="text" description="API Secret"><![CDATA[]]></config>
+    <config group="financial" name="payrexx_payment_mode" type="select" values="button,modal" description="Payment mode">modal</config>
+
+    <hooks>
+        <hook name="paymentButtons" type="smarty" page_type="front" filename="general"><![CDATA[]]></hook>
+    </hooks>
+
+    <pages>
+        <page name="ipn_payrexx" url="ipn/payrexx/" service="1">Payrexx IPN</page>
+    </pages>
+</module>
